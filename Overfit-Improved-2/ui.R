@@ -40,7 +40,7 @@ fluidPage(
       tableOutput("choose")),
     
       conditionalPanel("input.validate != 0",
-      div(style = "position:absolute;bottom: 4em;left:26em;",
+      div(style = "position:absolute;bottom: 2em;left:26em;",
         htmlOutput("text")))
   )
 )

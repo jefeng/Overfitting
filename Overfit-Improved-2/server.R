@@ -53,7 +53,7 @@ shinyServer(function(input, output,session) {
       
       mm<-lm(y2~xmat[,kk]) # Best Chosen X
 
-      d2<-density(y2-mm$fitted.values,bw = 0.55) # Pick the best X
+      d2<-density(y2-mm$fitted.values) # Pick the best X
       plot(range(d2$x), range(d2$y), type = "n", xlab = "Residual",
            ylab = "Density", main="")
       lines(d2, col="black",lwd=2)
@@ -69,13 +69,13 @@ shinyServer(function(input, output,session) {
       kk=which.max(abs(R2))
       mm<-lm(y2~xmat[,kk]) # Best Chosen X
       
-      d2<-density(y2-mm$fitted.values, bw = 0.55) # Pick the best X
+      d2<-density(y2-mm$fitted.values) # Pick the best X
       
       y1blue<-bluey()
       kkblue=which.max(abs(R2))
       xmatblue=array(unlist(mydata[3]),dim=c(n,k)) 
       mm2blue<-lm(y1blue~xmatblue[, k-kkblue+1]) # Randomly Chosen X
-      d1<-density(y1blue-mm2blue$fitted.values, bw=0.5) # Randomly Chosen X)
+      d1<-density(y1blue-mm2blue$fitted.values, adjust=2) # Randomly Chosen X)
       plot(range(d1$x,d2$x), range(d1$y,d2$y), type = "n", xlab = "Residual",
            ylab = "Density", main="")
       lines(d2, col="black",lwd=2)
