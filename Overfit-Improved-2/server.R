@@ -93,7 +93,7 @@ shinyServer(function(input, output,session) {
       kk=which.max(abs(R2))
       mm<-lm(y2~xmat[,kk]) # Best Chosen X
       plot(xmat[,kk], y2, xlab="Best Chosen X", ylab="Y")
-      abline(mm,col="blue")
+      abline(mm,col="red")
     })
     
     
@@ -140,8 +140,5 @@ shinyServer(function(input, output,session) {
       value22()},
       align="c"
     )
-    output$text <- renderText({ 
-      HTML(paste("Black line: Original y subtracts estimated y with the best X",
-                 "Blue line: New generated y subtracts estimated y with a randomly chosen X", sep ="<br/>"))
+    
     })
-})
