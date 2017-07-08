@@ -97,11 +97,11 @@ shinyServer(function(input, output,session) {
     })
     
     
-    observeEvent(input$plot,output$plot<-plot2)
+    observeEvent(input$plot,output$plott<-plot2)
     observeEvent(input$plot,output$scatter<-scatterplot)
     observeEvent(input$plot,output$choose<-value1)
 
-    observeEvent(input$validate,output$plot<-plot1)
+    observeEvent(input$validate,output$plott<-plot1)
     observeEvent(input$validate,output$choose<-value2)
     
     value11<-reactive({

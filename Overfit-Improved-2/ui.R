@@ -1,5 +1,6 @@
 library(shiny)
 library(shinythemes)
+library(shinyBS)
 fluidPage(
   theme = shinytheme("flatly"),
   titlePanel("Overfitting"),
@@ -36,7 +37,8 @@ fluidPage(
       id = "controls", class = "myClass", fixed = FALSE,
       draggable = FALSE, top = 40, left = "auto", right = 510, bottom = "auto",
       width = 520, height = "auto",
-      plotOutput("plot")),
+      plotOutput("plott"),
+      bsPopover("plott", "","It seemed like the black curve changes when adding the blue curve, however, this is caused by the scale. In order to fit both the black and blue curves perfectly, the scale must be adjusted",place="bottom")),
     
       absolutePanel(
       id = "controls", class = "myClass", fixed = FALSE,
@@ -46,10 +48,10 @@ fluidPage(
     
       absolutePanel(
       id = "controls", class = "myClass", fixed = FALSE,
-      draggable = FALSE, top = 460, left = "auto", right = 488, bottom = "auto",
+      draggable = FALSE, top = 460, left = "auto", right = 128, bottom = "auto",
       width = 500, height = "auto",
       tableOutput("choose"),
-      bsPopover("choose", "", "Compared the sample best correlation and randomly chosen correlation (In absolute value terms)", place="right",options = list(container = "body")))
+      bsPopover("choose", "", "Compared the sample best correlation and randomly chosen correlation (In absolute value terms)", place="bottom"))
     
       
     
