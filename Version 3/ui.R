@@ -36,7 +36,9 @@ fluidPage(
         fluidRow(
           
          
-          splitLayout(cellWidths = c("50%", "50%"),
+          splitLayout(style="border: 1px solid sliver;",
+                      cellWidths = c("50%", "50%"),
+                      cellArgs = list(style = "padding: 6px"),
                      plotOutput("plott"),
                      plotOutput("scatter"),
                      bsPopover("plott", "","It seemed like the black curve changes when adding the blue curve, however, this is caused by the scale. In order to fit both the black and blue curves perfectly, the scale must be adjusted", place="bottom",options = list(container = "body"))
