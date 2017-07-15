@@ -30,39 +30,45 @@ dashboardPage(skin="blue",
                                       such as having too many parameters relative to the number of observations."),
                                    
                                    h3("How the data are generated:"),
-                                   withMathJax(), 
-                                   h4("Step 1: pick a number of Y from N(0,1) "),
-                                   h4(tags$div("Step 2:pick a number of",
-                                               HTML(paste("X", tags$sub(1), sep='')),
-                                               "from N( Y, 1/rho^2), where rho is 
-                                               the true population correlation")),
-                                   h4(tags$div("Step 3: Independently pick a number of",
-                                               HTML(paste("X", tags$sub(2), sep='')),
-                                               "from N( Y, 1/rho^2), where rho is 
-                                               the true population correlation")),
+                                   withMathJax(),
+                                   h4("Step 1: Pick a number of Y from N(0,1) "),
+                                   
+                                   h4(helpText("Step 2: pick a number of",
+                                               HTML(paste("X", tags$sub(1), sep=''),
+                                                    " from N( Y, 1/\\(\\rho^2\\)), where 
+                                                    \\(\\rho\\) is 
+                                                    the true population correlation"))),
+                                   
+                                   h4(helpText("Step 3: Independently pick a number of",
+                                               HTML(paste("X", tags$sub(2), sep=''),
+                                                    " from N( Y, 1/\\(\\rho^2\\)), where 
+                                                    \\(\\rho\\) is 
+                                                    the true population correlation"))),
+                                   
                                    h4(tags$div("Step 4: Continue until you have K variables: ",
                                                
                                                HTML(paste("X", tags$sub(1), sep='')),
                                                "to", HTML(paste("X", tags$sub("k"), sep='')))),
                                    
                                    h4("Step 5: Repeat the above n times"),
-                                   
+                                  
+                                  
                                    
                                    h3("Instruction:"),
                                    h4("1. Move the sliders to change the values of sample size, true population correlation 
-                                      and the numbers of variables in the model."),
+                                      and the numbers of variables in the model"),
                                    h4(tags$div("2. You need to ",
                                                
                                                tags$strong("first"), "click the ",
                                                tags$strong("plot button"),
                                                "and",
                                                tags$strong("then"), "click the ",
-                                               tags$strong("validate button"),".")),
+                                               tags$strong("validate button"))),
                                    
                                    h4(tags$div("3. If you want to generate a new plot with the same slider values, just click ",
                                                tags$strong("plot button"),
-                                               "again.")),
-                                   h4("4. Use the hover in the app to see further information."  )
+                                               "again")),
+                                   h4("4. Use the hover in the app to see further information"  )
                                    
                                    
                                    
